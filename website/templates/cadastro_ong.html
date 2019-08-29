@@ -1,0 +1,14 @@
+
+{% extends 'shared/layout.html' %}
+{% load staticfiles %} 
+
+{% block conteudo %}
+
+<h1> LISTA DE ONGS</h1>
+
+
+{%for ong in ongs %}
+    <p><strong>{{ong.nome_responsavel}} {{ong.ong_nome}}</strong>---> {{ong.observacao}}</p>
+{%endfor%}
+
+{%endblock%}

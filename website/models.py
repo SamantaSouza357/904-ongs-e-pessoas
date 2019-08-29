@@ -34,7 +34,9 @@ class Pessoa(models.Model):
     )
     complemento = models.CharField(
         max_length=255,
-        verbose_name='Complemento'
+        verbose_name='Complemento',
+        null= True,
+        blank= True
     )
     genero = models.CharField(
         choices=GENEROS,
@@ -55,6 +57,45 @@ class Pessoa(models.Model):
     ) 
 
     motivo = models.TextField()
+
+    criado_em = models.DateTimeField(
+        auto_now_add=True
+    )
+    ativo = models.BooleanField(
+        default=True
+    )
+
+    def __str__(self):
+        return self.nome + '  ' + self.sobrenome
+
+
+class Ong(models.Model):
+    nome_responsavel = models.CharField(
+        max_length=255,
+        verbose_name='Nome Responsavel'
+    )
+
+    cep = models.CharField(
+        max_length=50,
+        verbose_name='cep'
+    )
+    
+    nome_ong = models.CharField(
+        max_length = 100,
+        verbose_name = 'Nome Ong'
+    )
+
+    telefone = models.CharField(
+        max_length = 100,
+        verbose_name = 'telefone'
+    )
+
+    horario = models.CharField(
+        max_length = 100,
+        verbose_name = 'horario'
+    )
+
+    observacao = models.TextField()
 
     criado_em = models.DateTimeField(
         auto_now_add=True

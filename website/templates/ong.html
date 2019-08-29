@@ -1,0 +1,40 @@
+{% extends 'shared/layout.html' %}
+{% load staticfiles %} 
+
+{% block conteudo %}
+
+
+    <h1>BEM VINDO AS ONGS</h1>
+    <form action="/" method="post">
+        {% csrf_token %}
+        <label for=" nome_responsavel ">Nome do Responsavel</label>
+        <input type="text" name=" nome_responsavel " required>
+
+        <label for="cep">cep:</label>
+        <input type="text" name="cep" required>
+
+        <label for="nome_ong">Nome da ONG:</label>
+        <input type="text" name="nome_ong" required>
+
+        <label for="telefone">Telefone:</label>
+        <input type="text" name="telefone" required>
+
+        <label for="horario">Horario:</label>
+        <input type="text" name="horario" required>
+
+        <label for="observacao">Observação:</label>
+        <textarea name="observacao" cols="30" rows="10" required></textarea>
+
+        <input type="submit" value="Cadastrar">
+
+    </form>
+<a href="/cadastro_ong">CLIQUE AQUI E VEJA AS ONGS CADASTRADAS</a>
+
+
+
+{% endblock %}       
+
+
+
+
+        
